@@ -57,9 +57,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // button_C
@@ -435,7 +438,6 @@
             this.label1.Size = new System.Drawing.Size(504, 70);
             this.label1.TabIndex = 24;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel3
             // 
@@ -461,11 +463,20 @@
             // panel4
             // 
             this.panel4.AutoScroll = true;
+            this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(506, 190);
             this.panel4.TabIndex = 27;
+            // 
+            // panel5
+            // 
+            this.panel5.AutoSize = true;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(480, 190);
+            this.panel5.TabIndex = 0;
             // 
             // Form1
             // 
@@ -484,13 +495,17 @@
             this.Controls.Add(this.button_C);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "计算器";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -525,6 +540,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Panel panel5;
     }
 }
-
